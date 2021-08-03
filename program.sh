@@ -44,15 +44,19 @@ j-package(){
       J_ARG="--icon logo/icon.icns"
   fi
 
+  APP_VERSION=0.1.0
+
   jpackage \
     --input target/jpackage-input \
     --dest target \
-    --main-jar figwheel-calva-docker.standalone.jar \
-    --name "figwheel-calva-docker" \
+    --main-jar deathstar.standalone.jar \
+    --name "deathstar" \
     --main-class clojure.main \
     --arguments -m \
-    --arguments figwheel-calva-docker.main \
-    --app-version "1" \
+    --arguments deathstar.main \
+    --resource-dir logo \
+    --java-options -Xmx2048m \
+    --app-version ${APP_VERSION} \
     $J_ARG
   
 }
