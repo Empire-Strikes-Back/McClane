@@ -36,12 +36,12 @@ j-package(){
   echo "Starting compilation..."
 
   if [ "$OS" == "windows" ]; then
-    J_ARG="--win-menu --win-dir-chooser --win-shortcut --icon logo/icon.ico"
+    J_ARG="--win-menu --win-dir-chooser --win-shortcut"
           
   elif [ "$OS" == "linux" ]; then
-      J_ARG="--linux-shortcut --icon logo/logo-728.png"
+      J_ARG="--linux-shortcut"
   else
-      J_ARG="--icon logo/icon.icns"
+      J_ARG=""
   fi
 
   jpackage \
