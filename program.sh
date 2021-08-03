@@ -45,8 +45,8 @@ j-package(){
   fi
 
   jpackage \
-    --input out/jpackage-input \
-    --dest out \
+    --input target/jpackage-input \
+    --dest target \
     --main-jar figwheel-calva-docker.standalone.jar \
     --name "figwheel-calva-docker" \
     --main-class clojure.main \
