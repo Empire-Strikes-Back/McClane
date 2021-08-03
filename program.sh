@@ -20,11 +20,14 @@ main(){
 
 
 uberjar(){
-
-  lein with-profiles +prod uberjar
-  mkdir -p target/jpackage-input
-  mv target/deathstar.standalone.jar target/jpackage-input/
-  #  java -Dclojure.core.async.pool-size=1 -jar target/deathstar.standalone.jar
+  clojure \
+    -X:uberjar hf.depstar/uberjar \
+    :aot true \
+    :jar out/figwheel-calva-docker.standalone.jar \
+    :verbose false \
+    :main-class figwheel-calva-docker.main
+  mkdir -p out/jpackage-input
+  mv out/figwheel-calva-docker.standalone.jar out/jpackage-input/
 }
 
 j-package(){
