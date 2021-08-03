@@ -1,7 +1,14 @@
 #!/bin/bash
 
+
 repl(){
-    clj -A:repl
+  clj \
+    -X:repl deps-repl.core/process \
+    :main-ns figwheel-calva-docker.main \
+    :port 7788 \
+    :host '"0.0.0.0"' \
+    :repl? true \
+    :nrepl? false
 }
 
 main(){
